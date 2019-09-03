@@ -17,9 +17,10 @@ class Attachment extends Post
         $filename = substr($filename, strripos($filename, '/') + 1);
 
         $url = $this->guid;
-        $urlWithoutFile = substr($url, 0, stripos($url, '/'));
 
-        if (strpos($urlWithoutFile, '/wp-content') >= 0) {
+        $urlWithoutFile = substr($url, 0, strripos($url, '/'));
+
+        if (strpos($urlWithoutFile, '/wp-content') > 0) {
             $urlWithoutFile = substr($url, 0, strpos($url, '/wp-content'));
         }
 
