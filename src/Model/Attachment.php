@@ -26,13 +26,13 @@ class Attachment extends Post
 
         $thumb = '';
         $metaData = unserialize(optional($this->meta()->where('meta_key', '_wp_attachment_metadata')->first())->meta_value);
-        if (strpos($metaData['sizes']['thumbnail']['file'], '/') === false) {
+        if (isset($metaData['sizes']['thumbnail']) && strpos($metaData['sizes']['thumbnail']['file'], '/') === false) {
             if (strpos($urlWithoutFile, 'wp-content') === false) {
                 $thumb = $urlWithoutFile.'/wp-content/uploads/'.$metaData['file'];
             } else {
                 $thumb = $urlWithoutFile.'/'.$metaData['file'];
             }
-        } else {
+        } else if(isset($metaData['sizes']['thumbnail'])) {
             $thumb = $urlWithoutFile.'/'.$metaData['sizes']['thumbnail']['file'];
         }
 
