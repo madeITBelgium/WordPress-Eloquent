@@ -20,7 +20,7 @@ class Comment extends \Illuminate\Database\Eloquent\Model
 
     public function post()
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Post::class, 'comment_post_ID');
     }
 
     public function meta()
