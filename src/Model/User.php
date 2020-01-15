@@ -22,6 +22,10 @@ class User extends Authenticatable
         'user_activation_key',
     ];
 
+    protected $fillable = [
+        'user_login', 'user_nicename', 'user_email', 'user_url', 'user_pass', 'user_registered', 'user_activation_key', 'user_status', 'display_name',
+    ];
+
     const CREATED_AT = 'user_registered';
 
     public function posts()
