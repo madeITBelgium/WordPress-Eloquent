@@ -20,7 +20,7 @@ class Post extends \Illuminate\Database\Eloquent\Model
     const UPDATED_AT = 'post_modified';
 
     protected $fillable = [
-        'post_author', 'post_content', 'post_title', 'post_excerpt', 'post_status', 'post_type', 'comment_status', 'ping_status', 'post_password', 'post_name', 'post_parent', 'menu_order', 'post_date', 'post_date_gmt',
+        'post_author', 'post_content', 'post_title', 'post_excerpt', 'post_status', 'post_type', 'comment_status', 'ping_status', 'post_password', 'post_name', 'post_parent', 'menu_order', 'post_date', 'post_date_gmt', 'post_modified', 'post_modified_gmt', 'to_ping', 'pinged', 'post_content_filtered',
     ];
 
     public function newQuery()
